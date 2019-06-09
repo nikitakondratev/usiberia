@@ -27,6 +27,6 @@ urlpatterns += [
     path('news/', include('news.urls')),
 ]
 urlpatterns += [
-    # path('', RedirectView.as_view(url='/main/', permanent=True)),
+    path('', RedirectView.as_view(url='/main/', permanent=True)),
 ]
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

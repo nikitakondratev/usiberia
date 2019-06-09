@@ -1,4 +1,6 @@
 from django.shortcuts import render
+from django.views import generic
+from .models import Article
 
 
 def news(request):
@@ -11,3 +13,7 @@ def news(request):
     return render(
         request, 'news.html',
     )
+
+
+class NewsView(generic.DetailView):
+    model = Article
