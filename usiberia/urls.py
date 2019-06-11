@@ -25,8 +25,10 @@ urlpatterns = [
 urlpatterns += [
     path('', include('main.urls')),
     path('news/', include('news.urls')),
+    url(r"^account/", include("account.urls")),
 ]
 urlpatterns += [
     path('', RedirectView.as_view(url='/main/', permanent=True)),
-]
+]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+
