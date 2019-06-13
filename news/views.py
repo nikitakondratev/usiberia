@@ -15,5 +15,9 @@ def news(request):
     )
 
 
-class NewsView(generic.DetailView):
+class NewsListView(generic.ListView):
+    model = Article
+
+
+class ArticleDetailView(generic.DetailView):
     model = Article

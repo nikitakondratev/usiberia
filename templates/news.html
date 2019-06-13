@@ -2,56 +2,24 @@
 {% load staticfiles %}
 {% block content %}
 	<div class="body container clearfix">
-		<section class="navigation">Навигация</section>
+		<section class="navigation">
+{#            {% block breadcrumbs %}#}
+{#                <div class="breadcrumbs">#}
+{#                    <a href="{% url 'index' %}">{{ 'Главная' }}</a>#}
+{#                    {% block crumbs %}#}
+{#                        {% if title %} &rsaquo; {{ title }}{% endif %}#}
+{#                        {{ block.super }}#}
+{#                        <div class="breadcrumb"><a href="{% url 'article-detail' pk=article.id %}">#}
+{#                    {% endblock %}#}
+{#                </div>#}
+{#            {% endblock %}#}
+            {% block breadcrumbs %}
+    <div class="breadcrumb"><a href="/">Главная</a></div>
+{% endblock %}
+        </section>
 		<div class="row">
 		<div class="col-lg-9 order-2">
-			<section class="news">
-			<article class="article row">
-				<div class="article-img col-4">
-					<img src="../static/images/background.jpg">
-				</div>
-				<div class="col-8">
-					<h3 class="article-title">Заголовок статьи, невероятно!</h3>
-					<div class="article-description">
-						<p>19-23 ноября наш город с деловым визитом посетила делегация предпринимателей из Алтайского края в количестве 12 человек.
-						</p>
-					</div>
-					<div class="tags">
-						Важное
-					</div>
-				</div>
-			</article>
-			<article class="article row">
-				<div class="article-img col-4">
-					<img src="../static/images/background.jpg">
-				</div>
-				<div class="col-8">
-					<h3 class="article-title">Заголовок статьи, невероятно!</h3>
-					<div class="article-description">
-						<p>19-23 ноября наш город с деловым визитом посетила делегация предпринимателей из Алтайского края в количестве 12 человек.
-						</p>
-					</div>
-					<div class="tags">
-						Важное
-					</div>
-				</div>
-			</article>
-			<article class="article row">
-				<div class="article-img col-4">
-					<img src="../static/images/background.jpg">
-				</div>
-				<div class="col-8">
-					<h3 class="article-title">Заголовок статьи, невероятно!</h3>
-					<div class="article-description">
-						<p>19-23 ноября наш город с деловым визитом посетила делегация предпринимателей из Алтайского края в количестве 12 человек.
-						</p>
-					</div>
-					<div class="tags">
-						Важное
-					</div>
-				</div>
-			</article>
-		</section>
+                {% block articles %}{% endblock articles %}
 		</div>
 		
 		<!-- НАЧАЛО КАЛЕНДАРЯ -->
@@ -79,6 +47,7 @@
 {% block calendar %}
         <script type="text/javascript" src="{% static 'js/jquery-3.4.1.min.js' %}"></script>
 		<script type="text/javascript" src="{% static 'js/jquery.calendario.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/modernizr.custom.63321.js' %}"></script>
 		<script type="text/javascript" src="{% static 'js/data.js' %}"></script>
 		<script type="text/javascript">
 

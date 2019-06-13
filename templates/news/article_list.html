@@ -1,0 +1,31 @@
+{% extends "news.html" %}
+{% block breadcrumbs %}
+    {{ block.super }}
+    <div class="breadcrumb"><a href="{% url 'news' %}">Каталог статей</a></div>
+{% endblock %}
+{% block articles %}
+    {% if article_list %}
+    <ul class="news">
+
+      {% for article in article_list %}
+      <li class="article row">
+          <div class="article-img col-4">
+              <img src="{{ article.image }}">
+          </div>
+          <div class="col-8">
+              <a href="{{ article.get_absolute_url }}"><h3 class="article-title">{{ article.title }}</h3></a>
+              <div class="article-description">
+                  {{article.description}}
+              </div>
+              <ul class="article-tags">
+                  <li><a href="#">Тэг 1</a></li>
+              </ul>
+          </div>
+      </li>
+      {% endfor %}
+
+    </ul>
+    {% else %}
+      <p>There are no news.</p>
+    {% endif %}
+{% endblock %}

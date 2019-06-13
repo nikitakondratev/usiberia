@@ -1,0 +1,23 @@
+{% extends 'base_generic.html' %}
+{% block content %}
+
+<section class="navigation">
+    {% block breadcrumbs %}
+    {{ block.super }}
+    <div class="breadcrumb"><a href="{% url 'account'%}">{{ article.title }}</a></div>
+<section/>
+    {% endblock breadcrumbs %}
+
+<div class="article">
+    <p>{{ admin. }}</p>
+    <p>День рождения: </p>
+    <p>Город:</p>
+    <p>Место работы: </p>
+    <p>Год окончания Школы Предпринимательства: </p>
+    <p>Телефон: </p>
+    <p>Электронная почта: </p>
+    <p>Высшее образование: </p>
+    <input type="text" name="text">
+    <p>Пол: </p>
+</div>
+{% endblock content %}
