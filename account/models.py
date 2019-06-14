@@ -34,6 +34,16 @@ class Account(models.Model):
 
     user = models.OneToOneField(settings.AUTH_USER_MODEL, related_name="account", verbose_name=_("user"), on_delete=models.CASCADE)
     timezone = TimeZoneField(_("timezone"))
+
+    # ПОЛЯ ДЛЯ ЗАПОЛНЕНИЯ ПОЛЬЗОВАТЕЛЯ
+
+    first_name_user = models.TextField("Имя")
+    second_name_user = models.TextField("Фамилия")
+    patronymic_user = models.TextField("Отчество")
+    birthday_user = models.DateField("День рождения")
+    city_user = models.TextField("Город")
+
+
     language = models.CharField(
         _("language"),
         max_length=10,

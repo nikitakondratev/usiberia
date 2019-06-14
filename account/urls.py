@@ -14,11 +14,14 @@ from account.views import (
     SettingsView,
     SignupView,
 )
+from . import views
+
 
 urlpatterns = [
+    # url(r"^$", views.personal_view, name="personal_page"),
     url(r"^signup/$", SignupView.as_view(), name="account_signup"),
-    path('login/', LoginView.as_view(), name="account_login"),
-    # url(r"login/$", LoginView.as_view(), name="account_login"),
+    # path('login/', LoginView.as_view(), name="account_login"),
+    url(r"login/$", LoginView.as_view(), name="account_login"),
     url(r"^logout/$", LogoutView.as_view(), name="account_logout"),
     url(r"^confirm_email/(?P<key>\w+)/$", ConfirmEmailView.as_view(), name="account_confirm_email"),
     url(r"^password/$", ChangePasswordView.as_view(), name="account_password"),

@@ -4,13 +4,13 @@
 <section class="navigation">
     {% block breadcrumbs %}
     {{ block.super }}
-    <div class="breadcrumb"><a href="{% url 'account'%}">{{ article.title }}</a></div>
+    <div class="breadcrumb"><a href="{% url 'account_page'%}">{{ article.title }}</a></div>
 <section/>
     {% endblock breadcrumbs %}
 
 <div class="article">
-    <p>{{ admin. }}</p>
-    <p>День рождения: </p>
+    <p>{{ account.user }}</p> # Ник пользователя
+    <p>{{  }}</p>
     <p>Город:</p>
     <p>Место работы: </p>
     <p>Год окончания Школы Предпринимательства: </p>

@@ -39,6 +39,8 @@ from account.models import (
 )
 from account.utils import default_redirect, get_form_data
 
+from django.shortcuts import render
+
 
 class PasswordMixin(object):
     """
@@ -842,3 +844,10 @@ class DeleteView(LoginRequiredMixin, LogoutView):
         ctx.update(kwargs)
         ctx["ACCOUNT_DELETION_EXPUNGE_HOURS"] = settings.ACCOUNT_DELETION_EXPUNGE_HOURS
         return ctx
+
+
+# def personal_view(request):
+#     return render(
+#         request, 'account.html',
+#     )
+
